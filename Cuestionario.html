@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>PROGRAMACION WEB</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">REGRESAR</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                      
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <header class="masthead" style="background-image: url('assets/img/images.jpeg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>QUIZ</h1>
+                            <span class="subheading"></span>
+                            <span class="subheading">Answer what is asked</span>
+                            <span class="subheading"></span>
+                            <span class="subheading"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+    <header>
+
+ </header>
+        
+<header align="center">
+    <div id="cuestionario" class="TPletras"></div><br>
+    <button id="boton">Mostrar resultado</button><br>
+    <div id="resultado" class="TPletras"></div><br>
+    <div id="promedio" class="TPletras"></div> 
+</header>
+
+
+<footer class="footer text-faded text-center py-5">
+</footer>
+
+
+
+</body>
+
+
+<script>
+    
+const contenedor = document.getElementById("cuestionario");
+const botonRes = document.getElementById("boton");
+const resultadoTest = document.getElementById("resultado");
+
+const preguntas = [
+    {
+        pregunta : "1. What colour will you paint the children's bedroom?",
+        respuestas: {
+            a: "I hope it was right.",
+            b: "We can't decide.",
+            c: "It wasn't very difficult."
+        },
+        respuestaCorrecta: "b"
+    },
+
+    {
+        pregunta : "2. I'd like two tickets for tomorrow night.",
+        respuestas: {
+            a: "How much did you pay?",
+            b: "Afternoon and evening.",
+            c: "I'll just check for you."
+        },
+        respuestaCorrecta: "c"
+    },
+
+    {
+        pregunta : "3. Can I park here?",
+        respuestas: {
+            a: "Sorry, I did that.",
+            b: "It's the same place.",
+            c: "Only for half an hour."
+        },
+        respuestaCorrecta: "c"
+    },
+
+    {
+        pregunta : "4. I can't understand this email.",
+        respuestas: {
+            a: "Would you like some help?",
+            b: "Don't you know?",
+            c: "I suppose you can."
+        },
+        respuestaCorrecta: "a"
+    },
+
+    {
+        pregunta : "5. Shall we go to the gym now?",
+        respuestas: {
+            a: "I'm too tired.",
+            b: "It's very good.",
+            c: "Not at all."
+        },
+        respuestaCorrecta: "a"
+    },
+
+    {
+        pregunta : "6. His eyes were ...... bad that he couldn't read the number plate of the car in front.",
+        respuestas: {
+            a: "such",
+            b: "too",
+            c: "so"
+        },
+        respuestaCorrecta: "c"
+    },
+
+    {
+        pregunta : "7. The company needs to decide ...... and for all what its position is on this point.",
+        respuestas: {
+            a: "here",
+            b: "once",
+            c: "first"
+        },
+        respuestaCorrecta: "b"
+    },
+
+
+    {
+        pregunta : "8. Don't put your cup on the ...... of the table – someone will knock it off.",
+        respuestas: {
+            a: "outside",
+            b: "edge",
+            c: "border"
+        },
+        respuestaCorrecta: "b"
+    },
+
+
+    {
+        pregunta : "9. I'm sorry - I didn't ...... to disturb you.",
+        respuestas: {
+            a: "hope",
+            b: "think",
+            c: "mean"
+        },
+        respuestaCorrecta: "c"
+    },
+
+    {
+        pregunta : "10. The singer ended the concert ...... her most popular song.",
+        respuestas: {
+            a: "with",
+            b: "by",
+            c: "as"
+        },
+        respuestaCorrecta: "a"
+    },
+
+    {
+        pregunta : "11. Would you mind ...... these plates a wipe before putting them in the cupboard?",
+        respuestas: {
+            a: "doing",
+            b: "getting",
+            c: "giving"
+        },
+        respuestaCorrecta: "c"
+    },
+
+    {
+        pregunta : "12. I was looking forward ...... at the new restaurant, but it was closed.",
+        respuestas: {
+            a: "to have eaten",
+            b: "to eating",
+            c: "eating"
+        },
+        respuestaCorrecta: "b"
+    },
+
+    {
+        pregunta : "13. ...... tired Melissa is when she gets home from work, she always makes time to say goodnight to the children.",
+        respuestas: {
+            a: " Whatever ",
+            b: "No matter how ",
+            c: "However much "
+        },
+        respuestaCorrecta: "b"
+    },
+
+    {
+        pregunta : "14. It was only ten days ago ...... she started her new job.",
+        respuestas: {
+            a: " since ",
+            b: "after ",
+            c: "that "
+        },
+        respuestaCorrecta: "c"
+    },
+
+    {
+        pregunta : "15. The shop didn't have the shoes I wanted, but they've ...... a pair specially for me.",
+        respuestas: {
+            a: "booked",
+            b: "ordered",
+            c: "commanded"
+        },
+        respuestaCorrecta: "b"
+    }
+];
+
+function Mostrar(){
+    const preguntasYrespuestas = [];
+
+    preguntas.forEach((preguntaActual, numeroDePregunta) => {
+        const respuestas = [];
+        for(letraRespuesta in preguntaActual.respuestas){
+            respuestas.push(
+                `<label>
+                    <input type="radio" name="${numeroDePregunta}" value="${letraRespuesta}">
+                    ${letraRespuesta} : ${preguntaActual.respuestas[letraRespuesta]}
+                </label>`
+            );
+        }
+        preguntasYrespuestas.push(
+            `<div class="cuestion"> ${preguntaActual.pregunta} </div>
+            <div class="respuestas"> ${respuestas.join('')} </div>
+            `
+        );
+    })
+
+    contenedor.innerHTML = preguntasYrespuestas.join('');
+}
+
+Mostrar();
+
+function mostrarResultado() {
+  const respuestas = contenedor.querySelectorAll(".respuestas");
+  let respuestasCorrectas = 0;
+
+  preguntas.forEach((preguntaActual, numeroDePregunta) => {
+    const todasLasRespuestas = respuestas[numeroDePregunta];
+    const checkboxRespuestas = `input[name='${numeroDePregunta}']:checked`;
+    const respuestaElegida = (
+      todasLasRespuestas.querySelector(checkboxRespuestas) || {}
+    ).value;
+
+    if (respuestaElegida === preguntaActual.respuestaCorrecta) {
+      respuestasCorrectas++;
+
+      respuestas[numeroDePregunta].style.color = "blue";
+    } else {
+      respuestas[numeroDePregunta].style.color = "red";
+    }
+  });
+
+  var promedio = respuestasCorrectas * 10 / 15
+  document.getElementById("promedio").innerHTML = "promedio: " + " " + promedio;
+
+  if(promedio >7){
+    alert("Aprobo el examen")
+  }
+
+  if(promedio <=6){
+    alert("Reprobo el examen")
+  }
+
+  if(promedio >9){
+
+    alert("Felizidadez ganaste una beca")
+  }
+  
+
+  resultadoTest.innerHTML =
+    "Usted ha acertado " +
+    respuestasCorrectas +
+    " preguntas de un total de " +
+    preguntas.length;
+
+
+}
+
+botonRes.addEventListener("click", mostrarResultado);
+
+</script>
+</html>
